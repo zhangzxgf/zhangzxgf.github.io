@@ -1,5 +1,16 @@
 ---
 layout: default
+title: onyce的小站
 ---
 <h1>hello world</h1>
-<p>hello world 2</p>
+<p>最新文章</p>
+<ul>
+	{%for post in site.posts%}
+		<li>
+			{{post.data | data_to_string}} 
+			<a href = "{{site.baseurl}}{{post.url}}">
+				{{post.title}}
+			</a>
+		</li>
+	{% endfor %}
+</ul>
